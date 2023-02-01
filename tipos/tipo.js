@@ -77,3 +77,46 @@ let usuario = {
     idade: 26
 };
 console.log(usuario);
+//Union Types - multiplos tipos
+console.log('----------------');
+console.log('Union Types');
+let nota = 10;
+console.log(`Minha nota é ${nota}!`);
+nota = '10';
+console.log(`Minha nota é ${nota}!`);
+//Never - função que nunca termina ou nunca chega no final de forma bem sucedida
+console.log('----------------');
+console.log('Never');
+function falha(msg) {
+    throw new Error(msg);
+}
+const produto = {
+    nome: 'Sabão',
+    preco: 8,
+    validarProduto() {
+        if (!this.nome || this.nome.trim().length == 0) {
+            falha('Precisa ter um nome');
+        }
+        if (this.preco <= 0) {
+            falha('Preço inválido!');
+        }
+    }
+};
+console.log(produto.validarProduto());
+//Valor null opcional 
+console.log('----------------');
+console.log('Null opcional');
+let altura = 12;
+let alturaOpcional = 12;
+alturaOpcional = null;
+const contato01 = {
+    nome: 'Fulano',
+    tel1: '0939849382',
+    tel2: null
+};
+console.log(contato01.nome);
+console.log(contato01.tel1);
+console.log(contato01.tel2);
+let podeSerNull = null;
+podeSerNull = 25;
+podeSerNull = true;
