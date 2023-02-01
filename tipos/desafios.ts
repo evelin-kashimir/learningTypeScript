@@ -31,6 +31,17 @@ type Funcionario = {
 }
 
 //Desafio - Tipagem de objeto
+type Conta = {
+    saldo: number,
+    depositar: (valor: number) => number
+}
+
+type Cliente = {
+    nome: string,
+    contaBancaria: Conta,
+    contatos: string[]
+}
+
 const contaBancaria: Conta = { 
     saldo: 3456,
     depositar(valor: number) {
@@ -42,15 +53,4 @@ const correntista: Cliente = {
     nome: 'Ana Silva',
     contaBancaria: contaBancaria,
     contatos: ['1236589636', 'e-mail@email.com']
-}
-
-type Conta = {
-    saldo: number,
-    depositar: (valor: number) => number;
-}
-
-type Cliente = {
-    nome: string,
-    contaBancaria: Conta,
-    contatos: string[]
 }

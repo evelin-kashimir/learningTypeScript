@@ -23,7 +23,6 @@ console.log(funcionario);
 console.log(funcionario.sup);
 console.log(funcionario.baterPonto(8));
 console.log(funcionario.baterPonto(9));
-//Desafio - Tipagem de objeto
 const contaBancaria = {
     saldo: 3456,
     depositar(valor) {
@@ -35,3 +34,4 @@ const correntista = {
     contaBancaria: contaBancaria,
     contatos: ['1236589636', 'e-mail@email.com']
 };
+//# sourceMappingURL=desafios.js.map
