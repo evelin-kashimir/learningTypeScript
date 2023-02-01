@@ -20,4 +20,6 @@ const funcionario: { sup: string[], baterPonto: (hora: number) => string } = {
 }
 
 console.log(funcionario)
+console.log(funcionario.sup)
+console.log(funcionario.baterPonto(8));
 console.log(funcionario.baterPonto(9));
