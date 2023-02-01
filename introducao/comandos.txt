@@ -1,0 +1,27 @@
+Comandos Básicos TypeScript
+
+-- Compilando código TS para JS manualmente: 
+    tsc <nome do arquivo a ser compilado> 
+        *Gera um arquivo JS
+
+-- Compilando de forma automatizada com plugin codeRunner:
+    Ctrl + Alt + N 
+
+-- Executando TypeScript no browser
+    Criar arquivo HTML
+    
+    Na raiz do projeto executar o comando para inicializar node
+        npm init -y 
+            *Gera uma pasta nodeModules e um arquivo package.json
+    
+    Adicione a dependencia do liveServer
+        npm i -s live-live-server 
+        Após isso, adicionar no arquivo package.json, dentro de script:
+            "start": "live-server"
+                *Isso fará com que quando iniciarmos o node (npm start), será
+                chamado o live-server e irá compilar no browser.
+        
+        Por fim, digite:
+            tsc -w
+                *Dessa forma, qualquer alteração no arquivo TS será detectada
+                e implementada automaticamente no browser.
