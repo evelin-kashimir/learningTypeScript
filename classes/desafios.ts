@@ -34,7 +34,5 @@ const celular = new Produto('Iphone 15', 5000);
 const noteBook = new Produto('Acer Aspire 10', 10000, 0.1);
 
 //noteBook.aplicarDesconto();
-console.log(noteBook);
 console.log(noteBook.resumo());
-console.log(celular);
 console.log(celular.resumo());
