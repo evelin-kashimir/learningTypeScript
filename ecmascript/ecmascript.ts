@@ -182,7 +182,7 @@ const clientes = [
 async function printCustomer(customerId: number){
     console.log(`[ID] -> ${customerId}`)
 }
-       
+    
 async function getAndPrintAllCustomers() {
     const customers = [...clientes]
     for (const customer of customers) {
