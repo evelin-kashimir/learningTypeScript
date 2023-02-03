@@ -1,5 +1,14 @@
 "use strict";
 //VARIÁVEIS
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 //VAR
 //console.log(seraQuePode);
 var seraQuePode = '?'; //hoisting - issamento 
@@ -115,4 +124,52 @@ const item = {
 };
 const { nome: nomeItem, preco, ids } = item;
 console.log(`Nome do item: ${nomeItem} Preco: ${preco} Ids: ${ids}`);
+//CallBack - jeito antigo
+console.log('-----------------------');
+console.log('CalBack');
+function esperar3s(callback) {
+    setTimeout(() => {
+        callback('3s depois...');
+    }, 3000);
+}
+esperar3s(function (resultado) {
+    console.log(resultado);
+});
+//Promise - jeito novo - Algo que se espera receber de algum lugar, 
+//tratando como res o dado positivo e reject caso haja algum erro
+function esperarPromise() {
+    return new Promise((res) => {
+        setTimeout(() => {
+            res('3s depois, utilizando Promise...');
+        }, 3000);
+    });
+}
+//depois da promise, faça algo com aquele dado que foi recebido, seja ele erro ou success
+esperarPromise().then(dado => console.log(dado));
+fetch('https://swapi.dev/api/people/1')
+    .then(res => res.json()) //transformando a em json a resposta da chamada da API
+    .then((personagem => console.log(personagem.films)))
+    .then(films => films)
+    .catch(res => console.log('Caiu no Catch')); //quando não tem uma chamada bem sucedida a API
+const clientes = [
+    { id: 1, nome: 'Evelin' },
+    { id: 2, nome: 'Julia' },
+    { id: 3, nome: 'Gaia' }
+];
+function printCustomer(customerId) {
+    return __awaiter(this, void 0, void 0, function* () {
+        console.log(`[ID] -> ${customerId}`);
+    });
+}
+function getAndPrintAllCustomers() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const customers = [...clientes];
+        for (const customer of customers) {
+            yield printCustomer(customer.id);
+        }
+    });
+}
+setTimeout(() => {
+    getAndPrintAllCustomers();
+}, 2000);
 //# sourceMappingURL=ecmascript.js.map

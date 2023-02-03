@@ -140,3 +140,56 @@ const item = {
 }
 const { nome: nomeItem, preco, ids } = item;
 console.log(`Nome do item: ${nomeItem} Preco: ${preco} Ids: ${ ids }`);
+
+//CallBack - jeito antigo
+console.log('-----------------------');
+console.log('CalBack');
+
+function esperar3s(callback: (dado: string) => void) {
+    setTimeout(() => {
+        callback('3s depois...');
+    }, 3000)
+}
+esperar3s(function(resultado: string) {
+    console.log(resultado)
+});
+
+//Promise - jeito novo - Algo que se espera receber de algum lugar, 
+//tratando como res o dado positivo e reject caso haja algum erro
+function esperarPromise() {
+    return new Promise((res: any) => {
+        setTimeout(() => {
+            res('3s depois, utilizando Promise...');
+        }, 3000)
+    });
+}
+//depois da promise, faça algo com aquele dado que foi recebido, seja ele erro ou success
+esperarPromise().then(dado => console.log(dado));
+
+fetch('https://swapi.dev/api/people/1')
+    .then(res => res.json()) //transformando a em json a resposta da chamada da API
+    .then((personagem => console.log(personagem.films))) 
+    .then(films => films)
+    .catch(res => console.log('Caiu no Catch')) //quando não tem uma chamada bem sucedida a API
+
+
+const clientes = [
+    { id: 1, nome: 'Evelin'},
+    { id: 2, nome: 'Julia'},
+    { id: 3, nome: 'Gaia'}
+];
+
+async function printCustomer(customerId: number){
+    console.log(`[ID] -> ${customerId}`)
+}
+       
+async function getAndPrintAllCustomers() {
+    const customers = [...clientes]
+    for (const customer of customers) {
+        await printCustomer(customer.id)
+    }
+}
+
+setTimeout(() => {
+    getAndPrintAllCustomers()
+}, 2000)
