@@ -122,4 +122,13 @@ class Unico {
 Unico.instance = new Unico;
 //const errado = new Unico()
 console.log(Unico.getInstance().agora());
+//Somente leitura - não é uma constante, porém gera um erro 
+class Aviao {
+    constructor(modelo, prefixo) {
+        this.prefixo = prefixo;
+        this.modelo = modelo;
+    }
+}
+const turboHelice = new Aviao('Tu-114', 'PT-ABC');
+console.log(turboHelice);
 //# sourceMappingURL=acesso.js.map
