@@ -109,4 +109,17 @@ console.log(res.getResultado());
 res = new Multiplicacao();
 res.executar(2, 3, 4, 5);
 console.log(res.getResultado());
+//Sigleton - Instancia única, parecido com o static, porém pode ser instanciado ou herdado
+class Unico {
+    constructor() { }
+    static getInstance() {
+        return Unico.instance;
+    }
+    agora() {
+        return new Date;
+    }
+}
+Unico.instance = new Unico;
+//const errado = new Unico()
+console.log(Unico.getInstance().agora());
 //# sourceMappingURL=acesso.js.map

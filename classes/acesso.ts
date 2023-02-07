@@ -96,3 +96,48 @@ class Mat {
 }
 console.log(Mat.areaCir(4));
 
+//Classes Abstratas - Classe modelo; Não pode ser instanciada, somente herdada (interface)
+abstract class Calculo {
+    protected resultado: number = 0;
+    abstract executar(...numeros: number[]): void; //método que será herdado e modificado
+
+    getResultado(): number {
+        return this.resultado;
+    }
+}
+
+class Soma extends Calculo {
+    executar(...numeros: number[]): void {
+        this.resultado = numeros.reduce((total, atual) => total + atual);
+    }
+}
+
+class Multiplicacao extends Calculo {
+    executar(...numeros: number[]): void {
+        this.resultado = numeros.reduce((total, atual) => total * atual);
+    }
+}
+
+let res = new Soma();
+res.executar(2, 3, 4, 5);
+console.log(res.getResultado());
+
+res = new Multiplicacao();
+res.executar(2, 3, 4, 5);
+console.log(res.getResultado());
+
+//Sigleton - Instancia única, parecido com o static, porém pode ser instanciado ou herdado
+class Unico {
+    private static instance: Unico = new Unico
+    private constructor() { }
+
+    static getInstance(): Unico {
+        return Unico.instance
+    }
+
+    agora() {
+        return new Date;
+    }
+}
+//const errado = new Unico()
+console.log(Unico.getInstance().agora());
