@@ -62,4 +62,26 @@ class Pessoa {
 const maria = new Pessoa;
 maria.idade = 10;
 console.log(maria);
+//Membros estáticos
+//Da forma tradicional
+class Matematica {
+    constructor() {
+        this.PI = 3.1416;
+    }
+    areaCir(raio) {
+        return this.PI * raio * raio;
+    }
+}
+const m1 = new Matematica();
+m1.PI = 4.2;
+console.log(m1.areaCir(4));
+//Utilizando atributos e métodos estáticos
+//Classes estáticas são úteis para métodos de conversão, utils e etc
+class Mat {
+    static areaCir(raio) {
+        return this.PI * raio * raio;
+    }
+}
+Mat.PI = 3.1416;
+console.log(Mat.areaCir(4));
 //# sourceMappingURL=acesso.js.map
