@@ -34,4 +34,3 @@ const correntista = {
     contaBancaria: contaBancaria,
     contatos: ['1236589636', 'e-mail@email.com']
 };
-//# sourceMappingURL=desafios.js.map

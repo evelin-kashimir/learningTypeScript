@@ -22,36 +22,32 @@ moto1.acelerar(30);
 console.log(moto1.velocidadeAtual);
 
 //Exercicio 2 - Herança
-abstract class FormaGeometrica {
-    protected base: number = 0
-    protected altura: number = 0   
+abstract class FormaGeometrica { 
+    constructor(protected base: number, protected altura: number) { }
+    abstract area(): number; 
 }
 
 class Retangulo extends FormaGeometrica {
-    constructor(base: number, altura: number){
-        super();
-        this.base = base,
-        this.altura = altura
-    }
     area(): number {
         return this.altura * this.base
     }
 }
+
 const ret = new Retangulo(5, 7);
 console.log(ret.area());
 
 //Exercicio 3 - Getters & Setters
 class Estagiario {
-    private primeiroNome: string = '';
+    private _primeiroNome: string = '';
 
-    get nome(): string {
-        return this.primeiroNome;
+    get primeiroNome(): string {
+        return this._primeiroNome;
     }
 
-    set setarNome(value: string) {
-        this.primeiroNome = value;
+    set primeiroNome(value: string) {
+        this._primeiroNome = value;
     }
 }
 const programador = new Estagiario();
-programador.setarNome = 'Evelin';
+programador.primeiroNome = 'Evelin';
 console.log(programador);

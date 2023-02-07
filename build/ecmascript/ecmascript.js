@@ -172,4 +172,3 @@ function getAndPrintAllCustomers() {
 setTimeout(() => {
     getAndPrintAllCustomers();
 }, 2000);
-//# sourceMappingURL=ecmascript.js.map

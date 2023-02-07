@@ -120,4 +120,3 @@ console.log(contato01.tel2);
 let podeSerNull = null;
 podeSerNull = 25;
 podeSerNull = true;
-//# sourceMappingURL=tipo.js.map

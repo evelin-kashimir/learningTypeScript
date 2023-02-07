@@ -45,4 +45,3 @@ var experiencia = cientista.experiencia
 const cientista = { primeiroNome: 'Will', experiencia: 12 };
 const { primeiroNome, experiencia } = cientista;
 console.log(`Funcionario: ${primeiroNome}, Anos de experiência: ${experiencia} anos.`);
-//# sourceMappingURL=desafioEcma.js.map

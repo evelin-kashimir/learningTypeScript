@@ -131,4 +131,3 @@ class Aviao {
 }
 const turboHelice = new Aviao('Tu-114', 'PT-ABC');
 console.log(turboHelice);
-//# sourceMappingURL=acesso.js.map

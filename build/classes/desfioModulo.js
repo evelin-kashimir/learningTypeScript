@@ -21,17 +21,12 @@ moto1.acelerar(30);
 console.log(moto1.velocidadeAtual);
 //Exercicio 2 - Herança
 class FormaGeometrica {
-    constructor() {
-        this.base = 0;
-        this.altura = 0;
+    constructor(base, altura) {
+        this.base = base;
+        this.altura = altura;
     }
 }
 class Retangulo extends FormaGeometrica {
-    constructor(base, altura) {
-        super();
-        this.base = base,
-            this.altura = altura;
-    }
     area() {
         return this.altura * this.base;
     }
@@ -41,16 +36,15 @@ console.log(ret.area());
 //Exercicio 3 - Getters & Setters
 class Estagiario {
     constructor() {
-        this.primeiroNome = '';
+        this._primeiroNome = '';
     }
-    get nome() {
-        return this.primeiroNome;
+    get primeiroNome() {
+        return this._primeiroNome;
     }
-    set setarNome(value) {
-        this.primeiroNome = value;
+    set primeiroNome(value) {
+        this._primeiroNome = value;
     }
 }
 const programador = new Estagiario();
-programador.setarNome = 'Evelin';
+programador.primeiroNome = 'Evelin';
 console.log(programador);
-//# sourceMappingURL=desfioModulo.js.map

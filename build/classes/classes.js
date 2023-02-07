@@ -21,4 +21,3 @@ class DataSimplificada {
 }
 const casamento = new Data(10, 10, 2025);
 console.log(casamento);
-//# sourceMappingURL=classes.js.map

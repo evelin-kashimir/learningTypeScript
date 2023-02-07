@@ -15,4 +15,3 @@ function saudar(isManha) {
     return 'Boa vida';
 }
 console.log(saudar(false));
-//# sourceMappingURL=compilador.js.map
