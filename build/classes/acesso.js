@@ -84,4 +84,29 @@ class Mat {
 }
 Mat.PI = 3.1416;
 console.log(Mat.areaCir(4));
+//Classes Abstratas - Classe modelo; Não pode ser instanciada, somente herdada (interface)
+class Calculo {
+    constructor() {
+        this.resultado = 0;
+    }
+    getResultado() {
+        return this.resultado;
+    }
+}
+class Soma extends Calculo {
+    executar(...numeros) {
+        this.resultado = numeros.reduce((total, atual) => total + atual);
+    }
+}
+class Multiplicacao extends Calculo {
+    executar(...numeros) {
+        this.resultado = numeros.reduce((total, atual) => total * atual);
+    }
+}
+let res = new Soma();
+res.executar(2, 3, 4, 5);
+console.log(res.getResultado());
+res = new Multiplicacao();
+res.executar(2, 3, 4, 5);
+console.log(res.getResultado());
 //# sourceMappingURL=acesso.js.map
