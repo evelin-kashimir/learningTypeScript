@@ -167,7 +167,7 @@ function esperarPromise() {
 esperarPromise().then(dado => console.log(dado));
 
 fetch('https://swapi.dev/api/people/1')
-    .then(res => res.json()) //transformando a em json a resposta da chamada da API
+    .then(res => res.json()) //transformando em json a resposta da chamada da API
     .then((personagem => console.log(personagem.films))) 
     .then(films => films)
     .catch(res => console.log('Caiu no Catch')) //quando não tem uma chamada bem sucedida a API
