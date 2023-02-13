@@ -7,8 +7,19 @@
     <title>TypeScript</title>
 </head>
 <body>
-    <script src="build/namespaces/geometria.js"></script>
-    <script src="build/namespaces/retangulo.js"></script>
-    <script src="build/namespaces/namespace.js"></script>
+  <script src="node_modules/systemjs/dist/system.js"></script>
+    <script src="build/modulos/modulos.js"></script>
+<!-- 
+<script>
+    SystemJs.config({
+        baseUrl: '/modulos',
+        packages: {
+            '/modulos': {
+                defaultJSExtension: true
+            }
+        }
+    })
+    SystemJs.import('./modulos/modulos.js')
+</script>--> 
 </body>
 </html>
